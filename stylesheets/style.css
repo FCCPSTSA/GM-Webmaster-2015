@@ -1,28 +1,38 @@
 @font-face {
-    font-family: 'Josefin Sans';
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 100;
-    src: local('Josefin Sans Thin'), local('JosefinSans-Thin'), url(http://fonts.gstatic.com/s/josefinsans/v9/q9w3H4aeBxj0hZ8Osfi3dzUBvlJYYQI_sDPKrlKoP9Q.woff2) format('woff2');
+    src: local('Raleway Thin'), local('Raleway-Thin'), url(font/Raleway-100.woff2) format('woff2'), url(font/Raleway-100.ttf) format('truetype');
+    unicode-range: U+0000-00FF;
+}
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Light'), local('OpenSans-Light'), url(font/OpenSans-300.woff2) format('woff2'), url(font/OpenSans-300.ttf) format('truetype');
     unicode-range: U+0000-00FF;
 }
 * {
     box-sizing: border-box;
 }
-html, body {
+html,
+body {
     height: 100%;
 }
 body {
-    font-family: "Josefin Sans", sans-serif;
-    -webkit-font-smoothing: subpixel;
+    font-family: 'Raleway', sans-serif;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     margin: 0;
 }
 header {
     color: white;
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100%;
 }
@@ -43,26 +53,29 @@ h2 {
 }
 nav {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 20px;
     text-transform: uppercase;
 }
 nav li {
     display: inline-block;
-    padding: 0 20px;
+    padding: 0 15px;
 }
 nav a {
     display: inline-block;
     color: white;
     text-decoration: none;
+    font-family: 'Open Sans', 'Raleway', sans-serif;
+    text-shadow: 0 0 white;
     font-size: 1.2em;
-    padding-bottom: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
     transform: translateZ(0);
     position: relative;
     overflow: hidden;
 }
 nav a:before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: -1;
     left: 50%;
@@ -72,7 +85,9 @@ nav a:before {
     height: 1px;
     transition: 0.3s ease-out;
 }
-nav a:hover:before, nav a:focus:before, nav a:active:before {
+nav a:hover:before,
+nav a:focus:before,
+nav a:active:before {
     left: 0;
     right: 0;
 }
@@ -88,4 +103,30 @@ nav a:hover:before, nav a:focus:before, nav a:active:before {
 }
 h1 {
     font-size: 6em;
+    font-weight: 100 !important;
+    border-bottom: solid 1px white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+h3 {
+    font-size: 1.5em;
+    display: inline-block;
+}
+.typed-cursor {
+    opacity: 1;
+    animation: blink 0.7s infinite alternate-reverse;
+}
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+article {
+    background: white;
+    color: black;
+    font-family: 'Open Sans', 'Raleway', sans-serif;
+    padding: 2em;
 }
