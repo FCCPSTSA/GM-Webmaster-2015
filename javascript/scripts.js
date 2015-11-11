@@ -8,11 +8,3 @@ $(window).scroll(function() {
         'background-color': 'rgba(100,100,100,' + wScroll/1000 + ')'
     });
 });
-$(document).ready(function() {
-    $('h3').typed({
-        strings: ['', 'A school equipped for the future!'],
-        typeSpeed: 50,
-        startDelay: 2000,
-        showCursor: false
-    });
-});

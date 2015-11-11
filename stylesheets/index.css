@@ -1,0 +1,64 @@
+.bg {
+    background: url(../images/1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+h1 {
+    overflow: hidden;
+    height: 18%;
+    -webkit-animation: headerGrow 3s;
+    animation: headerGrow 3s;
+}
+@-webkit-keyframes headerGrow {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 18%;
+    }
+}
+@keyframes headerGrow {
+    0% {
+        height: 0;
+    }
+    50% {
+        height: 0;
+    }
+    100% {
+        height: 18%;
+    }
+}
+
+.jumbotron div {
+    width: 50%;
+    height: 1px;
+    background: white;
+    display: block;
+    -webkit-animation: line-grow 2s;
+    animation: line-grow 2s;
+}
+@-webkit-keyframes line-grow {
+    0% {
+        width: 0;
+    }
+    20% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+@keyframes line-grow {
+    0% {
+        width: 0;
+    }
+    20% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
