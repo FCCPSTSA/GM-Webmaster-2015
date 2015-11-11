@@ -6,10 +6,10 @@
 h1 {
     overflow: hidden;
     height: 18%;
-    -webkit-animation: headerGrow 3s;
-    animation: headerGrow 3s;
+    -webkit-animation: header-grow 2s;
+    animation: header-grow 2s;
 }
-@-webkit-keyframes headerGrow {
+@-webkit-keyframes header-grow {
     0% {
         height: 0;
     }
@@ -20,7 +20,7 @@ h1 {
         height: 18%;
     }
 }
-@keyframes headerGrow {
+@keyframes header-grow {
     0% {
         height: 0;
     }
@@ -37,8 +37,8 @@ h1 {
     height: 1px;
     background: white;
     display: block;
-    -webkit-animation: line-grow 2s;
-    animation: line-grow 2s;
+    -webkit-animation: line-grow 1s;
+    animation: line-grow 1s;
 }
 @-webkit-keyframes line-grow {
     0% {
@@ -61,4 +61,13 @@ h1 {
     100% {
         width: 50%;
     }
+}
+h3:after {
+    content: '|';
+    animation: cursor-blink .3s infinite alternate-reverse ease-in-out;
+    font-size: 1.1em;
+}
+@keyframes cursor-blink {
+    0% {opacity: 0}
+    100% {opacity: 1}
 }
