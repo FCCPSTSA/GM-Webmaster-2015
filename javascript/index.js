@@ -10,14 +10,14 @@ $(window).scroll(function() {
     var wScroll = $(window).scrollTop();
     $('h1').css({
         'transform': 'translate(-' + wScroll * 4 + 'px,0)',
-        'opacity': 1-wScroll/200
+        'opacity': 1-wScroll/300
     });
     $('.jumbotron div').css({
         'transform': 'rotate(-' + wScroll/10 + 'deg)',
-        'opacity': 1-wScroll/200
+        'opacity': 1-wScroll/300
     });
     $('h3').css({
         'transform': 'translate(' + wScroll * 4 + 'px,0)',
-        'opacity': 1-wScroll/200
+        'opacity': 1-wScroll/300
     });
 });
