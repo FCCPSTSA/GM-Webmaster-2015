@@ -15,30 +15,28 @@
 * {
     box-sizing: border-box;
 }
-*:focus {
-    outline: 0;
-}
-html,
 body {
-    height: 100%;
-}
-body {
-    font-family: 'Raleway', sans-serif;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', 'Raleway', sans-serif;
     -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
     margin: 0;
     overflow-x: hidden;
 }
 h1,
 h2,
-h3 {
+h3,
+h4 {
     margin: 0;
+    font-family: 'Raleway', 'Open Sans', sans-serif;
 }
 a {
     color: inherit;
 }
 a:hover {
     text-decoration: none;
+}
+a:focus {
+    outline: 0;
 }
 header {
     color: white;
@@ -66,6 +64,50 @@ h2 {
     bottom: 0;
     z-index: -100;
 }
+.nav-button {
+    display: none;
+    width: 50px;
+    height: 45px;
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    z-index: 200;
+}
+.nav-button span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    opacity: 1;
+    right: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+.nav-button span:nth-child(1) {
+    top: 0px;
+}
+.nav-button span:nth-child(2) {
+    top: 15px;
+}
+.nav-button span:nth-child(3) {
+    top: 30px;
+}
+.nav-button.open span:nth-child(1) {
+    top: 18px;
+    transform: rotate(-135deg);
+}
+.nav-button.open span:nth-child(2) {
+    opacity: 0;
+    right: -60px;
+}
+.nav-button.open span:nth-child(3) {
+    top: 18px;
+    transform: rotate(135deg);
+}
 nav {
     position: absolute;
     top: 15px;
@@ -76,18 +118,6 @@ nav ul li {
     display: inline-block;
     padding: 0 15px;
     vertical-align: top;
-}
-nav li ul {
-    height: 0;
-    overflow: hidden;
-    transition: .3s height;
-}
-nav li:hover ul {
-    height: 10em;
-    transition: .3s height;
-}
-nav li li {
-    display: block;
 }
 nav a {
     transform: translateZ(0);
@@ -100,7 +130,7 @@ nav a {
     padding: 5px 10px;
     cursor: pointer;
 }
-nav > ul > li > a {
+nav a {
     position: relative;
     overflow: hidden;
 }
@@ -113,27 +143,15 @@ nav a:before {
     height: 1px;
     transition: 0.3s ease-out;
 }
-nav > ul > li > a:before {
+nav a:before {
     left: 50%;
     right: 50%;
 }
-nav > ul > li > a:hover:before,
-nav > ul > li > a:focus:before,
-nav > ul > li > a:active:before {
+nav a:hover:before,
+nav a:focus:before,
+nav a:active:before {
     left: 0;
     right: 0;
-}
-nav ul ul {
-    text-align: right;
-}
-nav ul ul a:before {
-    left: 100%;
-    right: 0;
-}
-nav ul ul a:hover:before,
-nav ul ul a:focus:before,
-nav ul ul a:active:before {
-    left: 0;
 }
 .active {
     cursor: default;
@@ -167,13 +185,13 @@ nav ul ul a:active:before {
 }
 h1 {
     font-size: 6em;
+    height: auto;
     font-weight: 100 !important;
 }
 h3 {
     font-size: 1.5em;
     height: 1em;
     margin-top: 20px;
-    text-shadow: 0 0 white;
 }
 header:after {
     content: '';
@@ -198,6 +216,41 @@ header:after {
 article {
     background: white;
     color: black;
-    font-family: 'Open Sans', 'Raleway', sans-serif;
     padding: 2em;
+}
+@media (max-width: 1100px) {
+    h2 {
+        position: relative;
+        margin-top: -50px;
+    }
+    nav,
+    .nav-button {
+        transition: .2s;
+    }
+    .nav-button {
+        display: block;
+    }
+    nav {
+        position: fixed;
+        top: -100vh;
+        right: 0;
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(to bottom right, darkgrey, lightgrey);
+        z-index: 100;
+        font-size: 1.3em;
+    }
+    nav,
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav.open {
+        top: 0;
+    }
+    .open {
+        transition: .2s;
+    }
 }

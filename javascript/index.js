@@ -5,6 +5,9 @@ $(document).ready(function() {
         startDelay: 2000,
         showCursor: false
     });
+    $('.nav-button').click(function() {
+        $('nav, .nav-button').toggleClass('open');
+    });
 });
 $(window).scroll(function() {
     var wScroll = $(window).scrollTop();
