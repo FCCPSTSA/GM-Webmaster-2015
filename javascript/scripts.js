@@ -8,3 +8,8 @@ $(window).scroll(function () {
 		'background-color': 'rgba(51,51,51,' + wScroll / 1000 + ')'
 	});
 });
+$(document).ready(function() {
+    $('.nav-button').click(function() {
+        $('nav, .nav-button').toggleClass('open');
+    });
+});
