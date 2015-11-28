@@ -5,7 +5,7 @@ $(window).scroll(function () {
 		'transform': 'translate(0,-' + wScroll / 2 + 'px)'
 	});
 	$('header').css({
-		'background-color': 'rgba(51,51,51,' + wScroll / 1000 + ')'
+		'background-color': 'rgba(100,100,100,' + wScroll / 500 + ')'
 	});
 });
 $(document).ready(function() {
